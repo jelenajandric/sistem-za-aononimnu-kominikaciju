@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Prijavi se</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="toolbar-container sticky-on-top">
+        <mat-toolbar color="primary" class="my-too">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 title app-name">
+                        Sigurnost na internetu
+                    </div>
+                    <div class="col-sm-6 actions-container">
+                        <mat-icon>person</mat-icon>
+                        {{getUsername()}}  &nbsp; &nbsp; 
+                        <button class="logout-button" mat-button (click)="logout()">
+                            Odjavi se
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </mat-toolbar>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 new-message-container">
+                <div class="form-container">
+                    <mat-card  class="z-depth center">
+                        <mat-card-content>
+                            <form [formGroup]="form" (ngSubmit)="sendMessage()">
+                                <p>
+                                    Izaberite nekog od aktivnih korisnika i posaljite mu poruku:
+                                </p>
+                                <p>
+                                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="receiver">
+                                        <mat-radio-button class="example-radio-button" *ngFor="let user of activeUsers" [value]="user">
+                                            {{user}}
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </p>
+                                
+                                <p>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Tekst poruke</mat-label>
+                                        <textarea matInput  cdkTextareaAutosize
+                                        #autosize="cdkTextareaAutosize"
+                                        cdkAutosizeMinRows="3"
+                                        cdkAutosizeMaxRows="5" placeholder="Text poruke" formControlName="text" minlength="3"></textarea>
+                                    </mat-form-field>
+                                </p>
+                                <p>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Kljuc</mat-label>
+                                        <input style="width: 100%" name="key" type="text" matInput placeholder="Kljuc" 
+                                                        formControlName="key" minlength="3"> 
+                                    </mat-form-field>
+                                </p>
+                                <p *ngIf="(error)" class="error">
+                                    {{error}}
+                                </p>
+                                
+                                <div class="place-for-button">
+                                    <button class="send-button"  type="submit" mat-button>Posalji</button>
+                                </div>
+                                <br>
+                            </form>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="col-sm-6 received-messages-container">
+                <app-received-messages></app-received-messages>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

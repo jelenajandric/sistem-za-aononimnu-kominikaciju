@@ -1,0 +1,99 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    min-width: 20vmax; 
+    min-height: 100%;
+}
+
+mat-card {
+    max-width: 50vh;
+    min-width: 20vmax;
+    background-color: #adc5d7;
+}
+
+mat-form-field {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+mat-card-content {
+    display: flexbox;
+    justify-content: center;
+}
+
+button {
+    background-color: #7d9eb8;
+}
+
+.error {
+    padding: 10px;
+    color: red;
+    text-align: center;
+    text-decoration: solid;
+    font-size: medium;
+}
+
+.place-for-button {
+    justify-content: center;
+    display: flex;
+}
+
+mat-toolbar {
+    background-color: #adc5d7 !important;
+    height: 60px !important;
+}
+
+.toolbar-container  {
+    min-width: 30vw;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+
+.app-name {
+    text-decoration: unset;
+    color: white;
+    font-weight: 1000;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.logout-button {
+    font-size: 1rem;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+}
+
+@media (max-width: 599px) {
+    .actions-container {
+        justify-content: left;
+    }
+}
+
+.new-message-container {
+    height: 100%;
+    padding:65px 0px;
+    position: sticky;
+    top: 80px;
+    z-index: 1000;
+}
+
+.received-messages-container {
+    padding:0px;
+    border: 3px solid #7d9eb8;
+    border-radius: 50px;
+    height: 100%;
+    margin: 5px 0px;
+}

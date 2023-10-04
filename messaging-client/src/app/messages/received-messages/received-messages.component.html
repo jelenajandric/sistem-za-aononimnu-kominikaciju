@@ -1,0 +1,12 @@
+<div class="messages-container">
+    <p class="received-messages-title">Primljene poruke: </p>
+    <div class="messages-here">
+        <div class="place-for-messages" *ngFor="let message of messages">
+            <div class="one-message">
+                <p class="sender">Posiljalac: {{message.sender}}</p>
+                <p class="message-content">{{message.text}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+

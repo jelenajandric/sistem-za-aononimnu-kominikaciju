@@ -1,0 +1,45 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    min-width: 20vmax; 
+    min-height: 100vh;
+}
+
+mat-card {
+    max-width: 50vh;
+    min-width: 20vmax;
+    background-color: #adc5d7;
+}
+
+mat-form-field {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+mat-card-content {
+    display: flexbox;
+    justify-content: center;
+}
+
+button {
+    background-color: #7d9eb8;
+}
+
+.error {
+    padding: 16px;
+    color: red;
+    text-align: center;
+    text-decoration: solid;
+    font-size: medium;
+}
+
+.place-for-button {
+    justify-content: center;
+    display: flex;
+}
+
+
+
